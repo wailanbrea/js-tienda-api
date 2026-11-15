@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7: Tienda Online con API FakeStore</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link href="css/api-store.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar / Encabezado -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🛒 FakeStore Online</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#carrusel">Destacados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ofertas">Ofertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#catalogo">Catálogo Completo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor Principal -->
+    <main class="container py-4">
+        <!-- Carrusel de Productos -->
+        <section class="mb-5">
+            <h2 class="h4 mb-3 text-secondary text-uppercase fw-semibold">Productos Destacados</h2>
+            <div id="carrusel" class="carousel slide shadow-sm rounded overflow-hidden" data-bs-ride="carousel">
+                <div class="carousel-indicators" id="carousel-indicators"></div>
+                <div class="carousel-inner" id="carousel-inner"></div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Sección de Ofertas Especiales (1º, 4º y 7º producto) -->
+        <section class="mb-5">
+            <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+                <h2 class="h3 fw-bold text-danger mb-0">🔥 Ofertas Exclusivas</h2>
+                <span class="badge bg-danger fs-6">Precios Especiales</span>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="ofertas">
+                <!-- Se inyecta dinámicamente con JS -->
+            </div>
+        </section>
+
+        <!-- Sección de Catálogo Completo -->
+        <section class="mb-5">
+            <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+                <h2 class="h3 fw-bold text-dark mb-0">📦 Catálogo de Productos</h2>
+                <span class="text-muted">Todos nuestros artículos</span>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="catalogo">
+                <!-- Se inyecta dinámicamente con JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Bootstrap para Detalles del Producto -->
+    <div class="modal fade" id="modalDetalles" tabindex="-1" aria-labelledby="modalDetallesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="modalDetallesLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4" id="modalBody">
+                    <!-- Contenido cargado dinámicamente -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2026 FakeStore Online - Proyecto de Programación IV</p>
+            <small class="text-secondary">Desarrollado consumiendo la API pública de Fake Store</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lógica de la Tienda -->
+    <script src="js/api-store.js"></script>
+</body>
+</html>
